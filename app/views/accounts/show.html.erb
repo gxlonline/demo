@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-header">
+    <%= "account #{@account.hash} transactions" %>
+  </div>
+
+  <div class="card-body">
+    <%= render partial: 'orders/list', locals: { objects: @transactions } %>
+  </div>
+</div>

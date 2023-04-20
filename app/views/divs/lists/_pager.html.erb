@@ -1,0 +1,5 @@
+<%- if objects.methods.include?(:total_pages) %>
+  <div class="mt-2 d-flex justify-content-center">
+      <%= paginate objects, params: defined?(vars) ? vars : {} %>
+  </div>
+<% end %>

@@ -1,0 +1,28 @@
+<div class="table-responsive">
+  <table class="table table-hover table-bordered table-sm text-center text-nowrap">
+    <thead class="thead-light">
+    <tr class="bg-secondary text-white">
+        <td class="">#</td>
+        <td class="">From</td>
+        <td class="">To</td>
+        <td class="">Number</td>
+        <td class="">Created At</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%- objects.each_with_index do |object, index| %>
+        <tr class="">
+          <td class=""><%= current_index(objects, index) %></td>
+          <td class=""><%= object.from_account.hash %></td>
+          <td class=""><%= object.to_account.hash %></td>
+          <td class=""><%= object.number %></td>
+          <td class=""><%= strf_ymdhms(object.created_at) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+</div>
+
+<%= render partial: 'divs/lists/pager', locals: {objects: objects} %>
